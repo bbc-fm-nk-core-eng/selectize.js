@@ -2678,9 +2678,10 @@
 			className : 'remove',
 			append    : true
 		}, options);
-	
-		var self = this;
-		var html = '<a href="javascript:void(0)" class="' + options.className + '" tabindex="-1" title="' + escape_html(options.title) + '">' + options.label + '</a>';
+
+        var self = this,
+            screenReaderLabel = escape_html(options.title),
+            html = '<a href="javascript:void(0)" class="' + options.className + '" tabindex="-1" title="' + screenReaderLabel + '" aria-label="' + screenReaderLabel + '">' + options.label + '</a>';
 	
 		/**
 		 * Appends an element as a child (with raw HTML).
